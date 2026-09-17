@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voltra | Appliance Energy Australia</title>
+  <meta name="description" content="A guide to how much everyday appliances cost to run in Australian homes." />
+
+  <!-- Google Fonts: Bricolage Grotesque (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== TOP NAVIGATION ===================== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <!-- Logo: clicking it returns the user to the Home page -->
+      <a href="#home" class="brand" id="logoLink" aria-label="Voltra home">
+        <img src="assets/logo.png" alt="Voltra power logo" class="brand__logo" />
+        <span class="brand__name">Voltra</span>
+      </a>
+
+      <!-- Nav links. JavaScript reads data-page to swap pages. -->
+      <ul class="nav__links">
+        <li><a href="#home" class="nav__link" data-page="home">Home</a></li>
+        <li><a href="#televisions" class="nav__link" data-page="televisions">Televisions</a></li>
+        <li><a href="#about" class="nav__link" data-page="about">About Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- "You are here" strip: tells the user which page they're on -->
+    <div class="locator">
+      <span class="locator__dot" aria-hidden="true"></span>
+      You are viewing: <strong id="currentPageLabel">Home</strong>
+    </div>
+  </header>
+
+  <!-- ===================== PAGES (swapped with JS) ===================== -->
+  <main>
+
+    <!-- ---------- HOME ---------- -->
+    <section class="page" id="home" data-title="Home">
+      <div class="hero">
+        <p class="hero__eyebrow">Appliance energy · Australia</p>
+        <h1 class="hero__title">What does it really cost<br />to keep your home running?</h1>
+        <p class="hero__lead">
+          Every appliance in an Australian home draws power differently. Voltra breaks down
+          where the kilowatt-hours go, so you can see which devices quietly add up on the
+          quarterly bill, and which barely register.
+        </p>
+        <a href="#televisions" class="btn" data-page="televisions">See the television breakdown</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat__num">~30%</span>
+          <span class="stat__label">of a typical home's electricity goes to appliances &amp; equipment*</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">10★</span>
+          <span class="stat__label">the top of Australia's Energy Rating star scale for many appliances</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">$0.25–0.35</span>
+          <span class="stat__label">rough cost per kWh across many Australian retailers*</span>
+        </div>
+      </div>
+
+      <!--<p class="footnote">* Figures shown are illustrative placeholders for this coursework prototype.</p>-->
+    </section>
+
+    <!-- ---------- TELEVISIONS ---------- -->
+    <section class="page" id="televisions" data-title="Televisions">
+      <header class="page-head">
+        <p class="page-head__eyebrow">Category</p>
+        <h1 class="page-head__title">Televisions</h1>
+        <p class="page-head__lead">
+          A modern TV's running cost depends on its screen size, the panel technology, how many
+          hours it's on, and how much power it draws in standby. Bigger and brighter usually means
+          more kilowatt-hours over a year.
+        </p>
+      </header>
+
+      <div class="panel">
+        <h2 class="panel__title">Reading the Energy Rating label</h2>
+        <p>
+          Australian TVs carry an Energy Rating label. More stars means the model uses less energy
+          for its size, and the label lists an estimated annual energy use in kilowatt-hours (kWh).
+          Comparing the kWh figure between two TVs of the same size is the quickest way to spot the
+          cheaper one to run.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h2 class="panel__title">Estimated running cost by TV type</h2>
+        <p class="panel__note">Illustrative placeholder figures, replace with your dataset.</p>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th scope="col">TV type</th>
+                <th scope="col">Size</th>
+                <th scope="col">Est. annual use (kWh)</th>
+                <th scope="col">Est. annual cost*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>LED LCD</td><td>55"</td><td>120</td><td>$36</td></tr>
+              <tr><td>LED LCD</td><td>65"</td><td>165</td><td>$50</td></tr>
+              <tr><td>OLED</td><td>55"</td><td>150</td><td>$45</td></tr>
+              <tr><td>OLED</td><td>65"</td><td>210</td><td>$63</td></tr>
+              <tr><td>Mini-LED</td><td>75"</td><td>260</td><td>$78</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="footnote">* Assumes an indicative rate of $0.30 per kWh. Placeholder values only.</p>
+      </div>
+
+      <div class="panel calc" id="calc">
+        <h2 class="panel__title">Work out your TV's running cost</h2>
+        <p>
+          Pick your TV (or enter its wattage from the Energy Rating label), set your daily
+          viewing hours, and adjust the electricity rate to match your bill.
+        </p>
+
+        <div class="calc__grid">
+          <label class="calc__field">
+            <span>Your TV</span>
+            <select id="applianceSelect">
+              <option value="90">LED LCD 55" - 90 W</option>
+              <option value="115">LED LCD 65" - 115 W</option>
+              <option value="110">OLED 55" - 110 W</option>
+              <option value="150">OLED 65" - 150 W</option>
+              <option value="180">Mini-LED 75" - 180 W</option>
+              <option value="custom">Custom</option>
+            </select>
+          </label>
+
+          <label class="calc__field">
+            <span>Power (watts)</span>
+            <input type="number" id="watts" value="90" min="0" step="5" />
+          </label>
+
+          <label class="calc__field">
+            <span>Viewing hours per day</span>
+            <input type="number" id="hours" value="5" min="0" max="24" step="0.5" />
+          </label>
+
+          <label class="calc__field">
+            <span>Electricity rate ($/kWh)</span>
+            <input type="number" id="rate" value="0.30" min="0" step="0.01" />
+          </label>
+        </div>
+
+        <div class="calc__results">
+          <div class="calc__result">
+            <span class="calc__result-num" id="outDaily">—</span>
+            <span class="calc__result-label">kWh per day</span>
+          </div>
+          <div class="calc__result">
+            <span class="calc__result-num" id="outAnnual">—</span>
+            <span class="calc__result-label">kWh per year</span>
+          </div>
+          <div class="calc__result calc__result--accent">
+            <span class="calc__result-num" id="outCost">—</span>
+            <span class="calc__result-label">estimated cost per year</span>
+          </div>
+        </div>
+
+        <p class="footnote">
+          Estimates only. Uses typical wattages and your chosen viewing hours, so results may
+          differ from the table above.
+        </p>
+      </div>
+    </section>
+
+    <!-- ---------- ABOUT US ---------- -->
+    <section class="page" id="about" data-title="About Us">
+      <header class="page-head">
+        <p class="page-head__eyebrow">About</p>
+        <h1 class="page-head__title">About Voltra</h1>
+        <p class="page-head__lead">
+          Voltra is a student project exploring household appliance energy consumption in the
+          Australian market. It pairs plain-language explanations with a simple calculator so
+          anyone can estimate their own running costs.
+        </p>
+      </header>
+
+      <div class="about-grid">
+        <div class="panel">
+          <h2 class="panel__title">What we're doing</h2>
+          <p>
+            We gather appliance energy figures and turn them into plain-language guidance and an
+            interactive calculator. The goal is to make energy use easy to understand for everyday
+            households, not just spec-sheet readers.
+          </p>
+        </div>
+        <div class="panel">
+          <h2 class="panel__title">The data</h2>
+          <p>
+            Figures on this site are indicative placeholders for this prototype. The calculator uses
+            typical TV wattages and an electricity rate you can adjust to match your own bill.
+          </p>
+        </div>
+      </div>
+
+      <div class="panel panel--accent">
+        <h2 class="panel__title">Use of Generative AI</h2>
+        <p>
+          Generative AI (Claude) was used to help scaffold this website's HTML, CSS and JavaScript
+          and to draft placeholder copy. All generated code was reviewed and is understood by the
+          author. Details are recorded in the project's <code>README.md</code>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <p>
+      &copy; <span id="year"></span> Shenal Gardiwasam · Voltra | COS30045 Project
+    </p>
+    <p class="site-footer__ai">
+      Website code and placeholder content were generated with the assistance of Generative AI (Claude).
+    </p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
