@@ -44,34 +44,47 @@
   <main>
 
     <!-- ---------- HOME ---------- -->
-    <section class="page" id="home" data-title="Home">
+        <section class="page" id="home" data-title="Home">
       <div class="hero">
         <p class="hero__eyebrow">Appliance energy · Australia</p>
         <h1 class="hero__title">What does it really cost<br />to keep your home running?</h1>
         <p class="hero__lead">
-          Every appliance in an Australian home draws power differently. Voltra breaks down
-          where the kilowatt-hours go, so you can see which devices quietly add up on the
-          quarterly bill, and which barely register.
+          Voltra digs into the energy use of Australia's household appliances, starting with
+          televisions. Drawing on a dataset of 4,573 registered TVs, it shows which screens, sizes
+          and brands quietly drive up power use, and which barely register.
         </p>
         <a href="#televisions" class="btn" data-page="televisions">See the television breakdown</a>
       </div>
 
       <div class="stats">
         <div class="stat">
-          <span class="stat__num">~30%</span>
-          <span class="stat__label">of a typical home's electricity goes to appliances &amp; equipment*</span>
+          <span class="stat__num">4,573</span>
+          <span class="stat__label">registered Australian TVs analysed in this project</span>
         </div>
         <div class="stat">
-          <span class="stat__num">10★</span>
-          <span class="stat__label">the top of Australia's Energy Rating star scale for many appliances</span>
+          <span class="stat__num">83%</span>
+          <span class="stat__label">of those TVs use LCD (LED) screens, the dominant technology</span>
         </div>
         <div class="stat">
-          <span class="stat__num">$0.25–0.35</span>
-          <span class="stat__label">rough cost per kWh across many Australian retailers*</span>
+          <span class="stat__num">65"</span>
+          <span class="stat__label">the most common screen size on the market</span>
         </div>
       </div>
 
-      <!--<p class="footnote">* Figures shown are illustrative placeholders for this coursework prototype.</p>-->
+      <p class="footnote"></p>
+
+      <div class="panel">
+        <h2 class="panel__title">About this project</h2>
+        <p>
+          Voltra looks at how much power televisions in the Australian market use. The dataset was
+          cleaned and processed in a KNIME workflow, then explored through charts on the Televisions
+          page, covering screen technologies, sizes, brands, power draw, energy ratings, and how
+          they relate to each other.
+        </p>
+        <p style="margin-top:14px;">
+          <a href="#televisions" class="btn" data-page="televisions">Explore the televisions data</a>
+        </p>
+      </div>
     </section>
 
     <!-- ---------- TELEVISIONS ---------- -->
@@ -97,28 +110,107 @@
       </div>
 
       <div class="panel">
-        <h2 class="panel__title">Estimated running cost by TV type</h2>
-        <p class="panel__note">Illustrative placeholder figures, replace with your dataset.</p>
-        <div class="table-wrap">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th scope="col">TV type</th>
-                <th scope="col">Size</th>
-                <th scope="col">Est. annual use (kWh)</th>
-                <th scope="col">Est. annual cost*</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>LED LCD</td><td>55"</td><td>120</td><td>$36</td></tr>
-              <tr><td>LED LCD</td><td>65"</td><td>165</td><td>$50</td></tr>
-              <tr><td>OLED</td><td>55"</td><td>150</td><td>$45</td></tr>
-              <tr><td>OLED</td><td>65"</td><td>210</td><td>$63</td></tr>
-              <tr><td>Mini-LED</td><td>75"</td><td>260</td><td>$78</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="footnote">* Assumes an indicative rate of $0.30 per kWh. Placeholder values only.</p>
+        <h2 class="panel__title">Data exploration</h2>
+        <p>
+          Six questions (plus a bonus) about Australia's TV market, each answered with a chart
+          built from the TV registration dataset. Tap any chart to open it full size.
+        </p>
+      </div>
+
+      <div class="panel qa">
+        <h3 class="qa__q">1. What TV screen technologies are available in Australia, and which are the most frequent?</h3>
+        <a class="chart-frame" href="assets/q1.png" target="_blank" rel="noopener">
+          <img src="assets/q1.png" alt="Pie and bar chart of TV screen technology counts: LCD (LED) 3,797, LCD 484, OLED 292" />
+        </a>
+        <p class="qa__answer">LCD (LED) dominates the market at about 83% of registered TVs (3,797 models).</p>
+        <p class="qa__explain">
+          Plain LCD makes up around 10.6% (484) and OLED just 6.4% (292). LED-backlit panels are
+          cheaper and cover every price range, so they've become the default, while OLED stays a
+          premium niche.
+        </p>
+      </div>
+
+      <div class="panel qa">
+        <h3 class="qa__q">2. What screen sizes are available, and which are the most frequent?</h3>
+        <a class="chart-frame" href="assets/q2.png" target="_blank" rel="noopener">
+          <img src="assets/q2.png" alt="Bar chart of TV counts by screen size, with 65-inch and 55-inch the tallest" />
+        </a>
+        <p class="qa__answer">Mid-to-large screens lead, with 65" the most common (773), just ahead of 55" (762).</p>
+        <p class="qa__explain">
+          75" (629) and 85" (357) follow, while small sizes like 24", 32" and 43" are far rarer.
+          Large screens have become the standard living-room choice.
+        </p>
+      </div>
+
+      <div class="panel qa">
+        <h3 class="qa__q">3. Which brands have the greatest number of different models?</h3>
+        <a class="chart-frame" href="assets/q3.png" target="_blank" rel="noopener">
+          <img src="assets/q3.png" alt="Bar chart of model count by brand: KOGAN 809, LG 723, Samsung Electronics 699 leading" />
+        </a>
+        <p class="qa__answer">KOGAN offers the most models (809), ahead of LG (723) and Samsung Electronics (699).</p>
+        <p class="qa__explain">
+          A few big brands hold most of the models while many others list only a handful, so the
+          market is quite top-heavy.
+        </p>
+      </div>
+
+      <div class="panel qa">
+        <h3 class="qa__q">4. Which screen technology consumes the least power?</h3>
+        <a class="chart-frame" href="assets/q4.png" target="_blank" rel="noopener">
+          <img src="assets/q4.png" alt="Bar chart of median on-mode power by screen tech: LCD 71.35 W, LCD (LED) 106 W, OLED 112.70 W" />
+        </a>
+        <p class="qa__answer">Plain LCD draws the least power, a median of 71.35 W.</p>
+        <p class="qa__explain">
+          LCD (LED) sits at 106 W and OLED is highest at 112.70 W. OLED lights each pixel
+          individually, so it tends to use more energy than a simpler LCD panel.
+        </p>
+      </div>
+
+      <div class="panel qa">
+        <h3 class="qa__q">5. What is the relationship between screen size and power use?</h3>
+        <a class="chart-frame" href="assets/q5.png" target="_blank" rel="noopener">
+          <img src="assets/q5.png" alt="Scatter plot of screen size vs power showing a clear upward trend" />
+        </a>
+        <p class="qa__answer">Bigger screens use more power, a strong, positive relationship.</p>
+        <p class="qa__explain">
+          The points rise steadily from bottom-left to top-right and stay fairly tight around that
+          trend. A larger screen has more area to light up, so it naturally needs more energy.
+        </p>
+      </div>
+
+      <div class="panel qa">
+        <h3 class="qa__q">6. What is the relationship between star rating and screen size?</h3>
+        <a class="chart-frame" href="assets/q6.png" target="_blank" rel="noopener">
+          <img src="assets/q6.png" alt="Scatter plot of screen size vs star rating showing points scattered evenly with no trend" />
+        </a>
+        <p class="qa__answer">There's little to no relationship, size barely affects efficiency.</p>
+        <p class="qa__explain">
+          Ratings stay scattered from low to high across every size, so efficiency comes down to the
+          panel and design rather than how big the screen is.
+        </p>
+      </div>
+
+      <div class="panel qa">
+        <h3 class="qa__q">7. <span class="qa__bonus">Bonus</span> Are there differences in power consumption between brands?</h3>
+        <a class="chart-frame" href="assets/q7.png" target="_blank" rel="noopener">
+          <img src="assets/q7.png" alt="Box plot and bar chart of median power by brand, Spark Electronics highest at ~233 W" />
+        </a>
+        <p class="qa__answer">Yes, power use varies widely, with Spark Electronics highest at about 233 W.</p>
+        <p class="qa__explain">
+          EMETE (182 W), Samsung Electronics (155 W), Sony (153 W) and Dreame (146 W) follow. The top
+          brands draw more than double what many others use, mostly because they focus on larger,
+          high-end screens.
+        </p>
+      </div>
+
+      <div class="panel panel--accent">
+        <h2 class="panel__title">The big picture</h2>
+        <p class="qa__answer">Screen size is the biggest driver of a TV's power use, not its brand or star rating.</p>
+        <p>
+          Australia's market runs on large LCD (LED) screens, and power climbs with size while the
+          star rating barely does. So to keep running costs down, watch the screen size first, then
+          check the actual power rating.
+        </p>
       </div>
 
       <div class="panel calc" id="calc">
@@ -137,7 +229,7 @@
               <option value="110">OLED 55" - 110 W</option>
               <option value="150">OLED 65" - 150 W</option>
               <option value="180">Mini-LED 75" - 180 W</option>
-              <option value="custom">Custom</option>
+              <option value="custom">Custom…</option>
             </select>
           </label>
 
@@ -203,8 +295,9 @@
         <div class="panel">
           <h2 class="panel__title">The data</h2>
           <p>
-            Figures on this site are indicative placeholders for this prototype. The calculator uses
-            typical TV wattages and an electricity rate you can adjust to match your own bill.
+            The charts come from a real dataset of registered Australian TVs, cleaned and processed
+            in a KNIME workflow. The calculator uses typical TV wattages so you can estimate your own
+            running cost against an electricity rate you set.
           </p>
         </div>
       </div>
@@ -213,7 +306,7 @@
         <h2 class="panel__title">Use of Generative AI</h2>
         <p>
           Generative AI (Claude) was used to help scaffold this website's HTML, CSS and JavaScript
-          and to draft placeholder copy. All generated code was reviewed and is understood by the
+          and to draft the site copy. All generated code was reviewed and is understood by the
           author. Details are recorded in the project's <code>README.md</code>.
         </p>
       </div>
@@ -227,7 +320,7 @@
       &copy; <span id="year"></span> Shenal Gardiwasam · Voltra | COS30045 Project
     </p>
     <p class="site-footer__ai">
-      Website code and placeholder content were generated with the assistance of Generative AI (Claude).
+      Website code and written content were generated with the assistance of Generative AI (Claude).
     </p>
   </footer>
 

@@ -7,8 +7,9 @@ market, with a focus page on televisions, plus an interactive energy-cost calcul
 ## Pages
 
 - **Home** — intro and headline stats, with a link through to the Televisions page.
-- **Televisions** — how to read the Energy Rating label, a placeholder running-cost table, and an
-  interactive calculator for estimating a TV's running cost.
+- **Televisions** — how to read the Energy Rating label, a data-exploration section answering six
+  questions (plus a bonus) with charts built from the TV dataset, and an interactive calculator for
+  estimating a TV's running cost.
 - **About Us** — what the project is, the data source, and the GenAI acknowledgement.
 
 ## How it works

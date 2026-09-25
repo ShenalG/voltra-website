@@ -331,27 +331,57 @@ main {
   color: var(--brown-700);
 }
 
-/* ---------- Table ---------- */
-.table-wrap { overflow-x: auto; }
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 6px;
-  min-width: 460px;
-}
-.data-table th,
-.data-table td {
-  text-align: left;
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--line);
-}
-.data-table thead th {
+/* ---------- Data exploration (charts + answers) ---------- */
+.qa__q {
   font-family: var(--font-display);
   font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.35;
   color: var(--brown-900);
-  border-bottom: 2px solid var(--olive-600);
+  margin: 0 0 16px;
 }
-.data-table tbody tr:hover { background: var(--cream-100); }
+.qa__bonus {
+  display: inline-block;
+  background: var(--orange-500);
+  color: var(--brown-900);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  vertical-align: middle;
+  margin: 0 4px;
+}
+
+/* Every chart sits in the same fixed-ratio white frame, so they all
+   line up at one consistent size and scale together on any screen. */
+.chart-frame {
+  display: block;
+  aspect-ratio: 8 / 3;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 16px;
+  transition: border-color 0.15s ease;
+}
+.chart-frame:hover { border-color: var(--olive-600); }
+.chart-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps every chart undistorted, never cropped */
+  display: block;
+}
+
+.qa__answer {
+  margin: 0 0 6px;
+  color: var(--brown-900);
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+.qa__explain { margin: 0; color: var(--brown-700); }
 
 /* ---------- Small text ---------- */
 .footnote { font-size: 0.82rem; color: var(--brown-700); margin: 6px 0 0; }
